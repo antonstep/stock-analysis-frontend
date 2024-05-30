@@ -6,7 +6,7 @@ function App() {
 
   useEffect(() => {
     const backendUrl = process.env.REACT_APP_BACKEND_HRL;
-    fetch(`${backendUrl}/api/stock/AAPL`)
+    fetch(`${backendUrl}/api/message`)
     .then(response => response.json())
       .then(setData)
       .catch(console.error);
