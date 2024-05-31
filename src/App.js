@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios'; // Import axios
 import config from './config';  // Import the config correctly
 
 function App() {
@@ -8,15 +9,13 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(config.API_URL);  // Directly using API_URL from config
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const json = await response.json();
-        setData(json);
+        // Using axios to make the HTTP request
+        const response = await axios.get(config.API_URL);
+        setData(response.data); // Direct access to response.data with axios
       } catch (error) {
         console.error('Fetching data failed:', error);
         setError(error.toString());
+        // Optionally handle error responses, e.g., error.response
       }
     };
 
