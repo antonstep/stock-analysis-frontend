@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     // Ensure the environment variable name is correct and consistently named
     const backendUrl = process.env.REACT_APP_BACKEND_URL;  // Corrected typo in variable name
-    fetch(`${backendUrl}/api/message`)
+    fetch(`${backendUrl}/api/data`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok'); // Handle non-2xx responses
