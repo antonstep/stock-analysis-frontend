@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import appConfig from './config';  // Import the config
+import config from './config';  // Import the config correctly
 
 function App() {
   const [data, setData] = useState(null);
@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${appConfig.API_URL}/data`);  // Using API_URL from config
+        const response = await fetch(config.API_URL);  // Directly using API_URL from config
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
