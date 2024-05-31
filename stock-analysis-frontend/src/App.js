@@ -9,6 +9,7 @@ function App() {
   useEffect(() => {
     // Ensure the environment variable name is correct and consistently named
     const backendUrl = process.env.REACT_APP_BACKEND_URL;  // Corrected typo in variable name
+    console.log(`Requesting URL: ${backendUrl}/api/data`);
     fetch(`${backendUrl}/api/data`)
       .then(response => {
         if (!response.ok) {
