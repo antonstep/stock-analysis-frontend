@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'; // Import axios
-import config from './config';  // Import the config correctly
+import axios from 'axios';
+import config from './config';
 
 function App() {
   const [data, setData] = useState(null);
@@ -9,13 +9,11 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Using axios to make the HTTP request
         const response = await axios.get(config.API_URL);
-        setData(response.data); // Direct access to response.data with axios
+        setData(response.data);
       } catch (error) {
         console.error('Fetching data failed:', error);
-        setError(error.toString());
-        // Optionally handle error responses, e.g., error.response
+        setError('Failed to fetch data');
       }
     };
 
@@ -25,8 +23,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {error ? <p>Error: {error}</p> : null}
-        {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : <p>Loading...</p>}
+        {error ? <p className="Error-message">Error: {error}</p> : null}
+        {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : <div className="Loader">Loading...</div>}
       </header>
     </div>
   );
