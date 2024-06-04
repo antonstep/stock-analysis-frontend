@@ -2,8 +2,8 @@
 
 // Configuration object
 const config = {
-  API_URL: process.env.REACT_APP_BACKEND_URL || 'https://default-backend-url.com/api/data'
+  API_URL: process.env.REACT_APP_BACKEND_URL
 };
 
-// Exporting the configuration object
+// Assign the object to a variable before exporting
 export default config;
