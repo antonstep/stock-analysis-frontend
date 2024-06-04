@@ -4,7 +4,7 @@ function FetchData() {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        fetch('https://your-backend-url.onrender.com/api/message')  // Update with your actual backend URL
+        fetch('https://stock-analysis-backend-y6qh.onrender.com/api/data')
             .then(response => response.json())
             .then(setData)
             .catch(console.error);
