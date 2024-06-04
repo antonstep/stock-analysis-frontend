@@ -1,7 +1,9 @@
 // src/config.js
 
-const configuration = {
+// Configuration object
+const config = {
   API_URL: process.env.REACT_APP_BACKEND_URL || 'https://default-backend-url.com/api/data'
 };
 
-export default configuration;
+// Exporting the configuration object
+export default config;
